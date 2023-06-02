@@ -26,7 +26,7 @@ const renderLegend = (props) => {
                 payload.map((entry, index) => {
                     console.log(entry)
                     const colors = entry.color;
-                    return <li li key={`item-${index}`}> <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: colors, display: "inline-block" }}></div> {entry.value} </li>
+                    return <li li key={`item-${index}`}> <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: colors, display: "inline-block" }}></div>{entry.value} {entry.payload.values} </li>
                 })
             }
         </StyleUl >
