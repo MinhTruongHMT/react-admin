@@ -9,6 +9,7 @@ import {
 } from '@ant-design/icons';
 
 import { Button, Layout, Menu, theme, Space } from 'antd';
+import { NavLink } from "react-router-dom";
 import { useState } from 'react';
 const { Header, Sider, Content } = Layout;
 const LayoutStyle = ({ children }) => {
@@ -17,11 +18,11 @@ const LayoutStyle = ({ children }) => {
     token: { colorBgContainer },
   } = theme.useToken();
   return (
-    <Space direction="vertical" style={{ width: '100%'}} size={[0, 48]}>
+    <Space direction="vertical" style={{ width: '100%' }} size={[0, 48]}>
       <Layout>
         <Sider trigger={null} collapsible collapsed={collapsed} >
           <div className="demo-logo-vertical" />
-          <Menu style={{height:'100vh'}}
+          <Menu style={{ height: '100vh' }}
             theme="dark"
             mode="inline"
             defaultSelectedKeys={['1']}
@@ -29,32 +30,56 @@ const LayoutStyle = ({ children }) => {
               {
                 key: '1',
                 icon: <HomeOutlined />,
-                label: 'Home',
+                label: <NavLink to="/" style={({ isActive }) => ({
+                  color: isActive ? 'white' : 'white'
+                })}>
+                  Home
+                </NavLink>,
               },
               {
                 key: '2',
                 icon: <UserOutlined />,
-                label: 'User',
+                label: <NavLink to="/user" style={({ isActive }) => ({
+                  color: isActive ? 'white' : 'white'
+                })}>
+                  User
+                </NavLink>,
               },
               {
                 key: '3',
                 icon: <CrownOutlined />,
-                label: 'Customers',
+                label: <NavLink to="/user" style={({ isActive }) => ({
+                  color: isActive ? 'white' : 'white'
+                })}>
+                  Customers
+                </NavLink>,
               },
               {
                 key: '4',
                 icon: <ShopOutlined />,
-                label: 'Product',
+                label: <NavLink to="/user" style={({ isActive }) => ({
+                  color: isActive ? 'white' : 'white'
+                })}>
+                  Product
+                </NavLink>,
               },
               {
                 key: '5',
                 icon: <ShoppingCartOutlined />,
-                label: 'Orders',
+                label: <NavLink to="/user" style={({ isActive }) => ({
+                  color: isActive ? 'white' : 'white'
+                })}>
+                  Orders
+                </NavLink> ,
               },
               {
                 key: '6',
                 icon: <TagOutlined />,
-                label: 'Coupon',
+                label: <NavLink to="/user" style={({ isActive }) => ({
+                  color: isActive ? 'white' : 'white'
+                })}>
+                  Coupon
+                </NavLink>,
               },
             ]}
           />

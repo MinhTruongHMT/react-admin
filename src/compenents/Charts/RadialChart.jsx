@@ -12,7 +12,7 @@ const StyleUl = styled.ul`
 
 const style = {
     lineHeight: "24px",
-    width: 300,
+    width: 350,
 
 };
 
@@ -26,7 +26,7 @@ const renderLegend = (props) => {
                 payload.map((entry, index) => {
                     console.log(entry)
                     const colors = entry.color;
-                    return <li li key={`item-${index}`}> <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: colors, display: "inline-block" }}></div>{entry.value} {entry.payload.values} </li>
+                    return <li li key={`item-${index}`}> <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: colors, display: "inline-block" , marginRight:10}}></div>{entry.value} <span style={{fontSize:15,fontWeight:700,marginLeft:10}}> {entry.payload.values}</span> </li>
                 })
             }
         </StyleUl >
