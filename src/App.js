@@ -1,27 +1,15 @@
 
 //import 'antd/dist/antd.css';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { Button, Space } from 'antd';
+import Home from './conteners/Home';
+import 'antd/dist/reset.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Space className="site-button-ghost-wrapper" wrap>
-          <Button type="primary" ghost>
-            Primary
-          </Button>
-          <Button ghost>Default</Button>
-          <Button type="dashed" ghost>
-            Dashed
-          </Button>
-          <Button type="primary" danger ghost>
-            Danger
-          </Button>
-        </Space>
-      </header>
-    </div>
+    <Routes>
+      <Route path='/' element={<Home />} />
+    </Routes>
   );
 }
-
 export default App;
